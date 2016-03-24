@@ -133,7 +133,7 @@ public abstract class SRLParser {
 		private final Table<Integer, Integer, ResolvedDependency> headToArgNumberToDependency = HashBasedTable.create();
 		private final List<SyntaxTreeNodeLeaf> leaves;
 
-		private CCGandSRLparse(final SyntaxTreeNode ccgParse, final Collection<ResolvedDependency> dependencyParse,
+		public CCGandSRLparse(final SyntaxTreeNode ccgParse, final Collection<ResolvedDependency> dependencyParse,
 				final List<InputWord> words) {
 			super();
 			this.ccgParse = ccgParse;
