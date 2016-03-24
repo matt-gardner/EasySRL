@@ -16,14 +16,14 @@
         <delete file="${jar}"/>
     </target>
 
-    <target name="compile" depends="clean">
+    <target name="compile">
         <mkdir dir="${bin}"/>
-        <javac srcdir="src" destdir="${bin}" includeantruntime="false">
+        <javac srcdir="src" destdir="${bin}" debug="true" includeantruntime="false">
            <classpath refid="classpath"/>
         </javac>
     </target>
 
-    <target name="create_run_jar" depends="clean,compile">
+    <target name="create_run_jar" depends="compile">
         <jar destfile="${jar}" filesetmanifest="mergewithoutmain">
             <manifest>
                 <attribute name="Main-Class" value="edu.uw.easysrl.main.EasySRL"/>

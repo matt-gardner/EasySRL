@@ -119,6 +119,8 @@ public abstract class ParsePrinter {
 			@Override
 			public void visit(final SyntaxTreeNodeBinary node) {
 				result.append("(<T ");
+                                result.append(node.getRuleType().toString());
+                                result.append(" ");
 				result.append(node.getCategory().toString());
 				result.append(" " + (node.isHeadIsLeft() ? "0" : "1") + " 2> ");
 				node.getLeftChild().accept(this);
@@ -131,6 +133,8 @@ public abstract class ParsePrinter {
 			@Override
 			public void visit(final SyntaxTreeNodeUnary node) {
 				result.append("(<T ");
+                                result.append(node.getUnaryRule().toString());
+                                result.append(" ");
 				result.append(node.getCategory().toString());
 				result.append(" 0 1> ");
 				node.getChild().accept(this);
